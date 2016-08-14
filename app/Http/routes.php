@@ -12,6 +12,6 @@
 */
 
 Route::get('/', function () {
-    dd(DB::select('show tables'));
-    return view('welcome');
+    $teams = App\Team::all();
+    return response()->json($teams);
 });
